@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthCare Plus - Complete Healthcare Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="https://res.cloudinary.com/divvthkh8/image/upload/v1738221767/HelthCarePlus_mwpi7n.png">
+</head>
+<body>
+    <nav>
+        <div class="logo">HealthCare<span>Plus</span></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#doctors">Doctors</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <img src="https://res.cloudinary.com/divvthkh8/image/upload/v1738221767/HelthCarePlus_mwpi7n.png" alt="HelthcarePlus Logo" class="helthcarePlus-logo"/>
+            <h1>Your Health, Our Priority</h1>
+            <p>A complete Healthcare Platform made Affordable & Accessible</p>
+            <button class="cta-button">Book Appointment</button>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <div class="service-grid">
+            <div class="service-card">
+                <i class="fas fa-user-md"></i>
+                <h3>Online Doctor Consultation</h3>
+                <p>24/7 access to qualified healthcare professionals</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-robot"></i>
+                <h3>AI Health Assistant</h3>
+                <p>Get instant health advice and precautions</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-home"></i>
+                <h3>Home Visit</h3>
+                <p>Doctor visits at your doorstep</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-tint"></i>
+                <h3>Blood Tests</h3>
+                <p>Home collection and online reports</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-ambulance"></i>
+                <h3>Emergency Services</h3>
+                <p>Quick response from nearby hospitals</p>
+            </div>
+            <div class="service-card">
+                <i class="fas fa-hand-holding-heart"></i>
+                <h3>Blood Donation</h3>
+                <p>Connect donors with those in need</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ai-chat" class="ai-chat">
+        <h2>AI Health Assistant</h2>
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="userInput" placeholder="Ask about your health concerns...">
+                <button onclick="sendMessage()">Send</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctors" class="doctors">
+        <h2>Our Doctors</h2>
+        <div class="doctor-grid" id="doctorGrid">
+            <!-- Doctors will be added dynamically via JavaScript -->
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@healthcareplus.com</p>
+                <p>Phone: 1-800-HEALTH</p>
+            </div>
+            <div class="footer-section">
+                <h3>Emergency</h3>
+                <p>24/7 Helpline: 7569399294</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
