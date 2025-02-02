@@ -71,4 +71,8 @@ This project is licensed under the MIT License.
 
 ## Contact
 For any queries, feel free to reach out at msdevgoog01@gmail.com  **[LinkedIn](https://www.linkedin.com/in/maheswaram-subrahmanyam-361238275/)**
+## Author
+**Developer:** Maheswaram Subrahmanyam  
+**All Rights Reserved ©**
+
 
