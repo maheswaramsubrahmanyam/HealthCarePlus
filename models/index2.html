@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction System</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2><img src="dashboard-icon.png" alt=""> Multiple Disease Prediction System</h2>
+        <button class="nav-btn" data-model="diabetes">
+            <img src="diabetes-icon.png" alt="">
+            Diabetes Prediction
+        </button>
+        <button class="nav-btn active" data-model="heart">
+            <img src="heart-icon.png" alt="">
+            Heart Disease Prediction
+        </button>
+        <button class="nav-btn" data-model="parkinsons">
+            <img src="parkinsons-icon.png" alt="">
+            Parkinsons Prediction
+        </button>
+        <button class="nav-btn" data-model="lung">
+            <img src="lung-icon.png" alt="">
+            Lung Cancer Prediction
+        </button>
+        <button class="nav-btn" data-model="liver">
+            <i class="fas fa-liver"></i> Liver Disease Prediction
+        </button>
+        <button class="nav-btn" data-model="kidney">
+            <img src="kidney-icon.png" alt="">
+            Kidney Disease Prediction
+        </button>
+        <button class="nav-btn" data-model="thyroid">
+            <img src="thyroid-icon.png" alt="">
+            Thyroid Disease Prediction
+        </button>
+        <button class="nav-btn" data-model="alzheimer">
+            <img src="alzheimer-icon.png" alt="">
+            Alzheimer's Prediction
+        </button>
+    </div>
+
+    <div class="main-content">
+        <!-- Diabetes Form -->
+        <div id="diabetes-form" class="model-form" style="display: none;">
+            <h1>Diabetes Prediction using ML</h1>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="pregnancies">Number of Pregnancies</label>
+                    <input type="number" id="pregnancies" required>
+                </div>
+                <div class="form-group">
+                    <label for="glucose">Glucose Level</label>
+                    <input type="number" id="glucose" required>
+                </div>
+                <div class="form-group">
+                    <label for="bloodpressure">Blood Pressure value</label>
+                    <input type="number" id="bloodpressure" required>
+                </div>
+                <div class="form-group">
+                    <label for="skinthickness">Skin Thickness value</label>
+                    <input type="number" id="skinthickness" required>
+                </div>
+                <div class="form-group">
+                    <label for="insulin">Insulin Level</label>
+                    <input type="number" id="insulin" required>
+                </div>
+                <div class="form-group">
+                    <label for="bmi">BMI value</label>
+                    <input type="number" id="bmi" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="diabetespedigree">Diabetes Pedigree Function value</label>
+                    <input type="number" id="diabetespedigree" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age of the Person</label>
+                    <input type="number" id="age" required>
+                </div>
+            </div>
+
+            <button id="check-diabetes" class="check-btn">Diabetes Test Result</button>
+            
+            <div id="diabetes-result" class="result-container">
+                <!-- Result will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Heart Disease Form -->
+        <div id="heart-disease-form" class="model-form">
+            <h1>Heart Disease Prediction using ML</h1>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age">Age</label>
+                    <input type="number" id="age" required>
+                </div>
+                <div class="form-group">
+                    <label for="sex">Sex</label>
+                    <select id="sex" required>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="cp">Chest Pain Types</label>
+                    <select id="cp" required>
+                        <option value="0">Typical Angina</option>
+                        <option value="1">Atypical Angina</option>
+                        <option value="2">Non-anginal Pain</option>
+                        <option value="3">Asymptomatic</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="trestbps">Resting Blood Pressure</label>
+                    <input type="number" id="trestbps" required>
+                </div>
+                <div class="form-group">
+                    <label for="chol">Serum Cholestoral in mg/dl</label>
+                    <input type="number" id="chol" required>
+                </div>
+                <div class="form-group">
+                    <label for="fbs">Fasting Blood Sugar > 120 mg/dl</label>
+                    <select id="fbs" required>
+                        <option value="1">True</option>
+                        <option value="0">False</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="restecg">Resting Electrocardiographic results</label>
+                    <input type="number" id="restecg" required>
+                </div>
+                <div class="form-group">
+                    <label for="thalach">Maximum Heart Rate achieved</label>
+                    <input type="number" id="thalach" required>
+                </div>
+                <div class="form-group">
+                    <label for="exang">Exercise Induced Angina</label>
+                    <select id="exang" required>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="oldpeak">ST depression induced by exercise</label>
+                    <input type="number" id="oldpeak" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="slope">Slope of the peak exercise ST segment</label>
+                    <input type="number" id="slope" required>
+                </div>
+                <div class="form-group">
+                    <label for="ca">Major vessels colored by flourosopy</label>
+                    <input type="number" id="ca" required>
+                </div>
+                <div class="form-group">
+                    <label for="thal">Thal</label>
+                    <input type="number" id="thal" required>
+                </div>
+            </div>
+
+            <button id="check-result" class="check-btn">Heart Disease Test Result</button>
+            
+            <div id="result" class="result-container">
+                <!-- Result will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Parkinsons Form -->
+        <div id="parkinsons-form" class="model-form" style="display: none;">
+            <h1>Parkinson's Disease Prediction using ML</h1>
+            
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="mdvp-fo">MDVP:Fo(Hz)</label>
+                    <input type="number" id="mdvp-fo" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-fhi">MDVP:Fhi(Hz)</label>
+                    <input type="number" id="mdvp-fhi" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-flo">MDVP:Flo(Hz)</label>
+                    <input type="number" id="mdvp-flo" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-jitter">MDVP:Jitter(%)</label>
+                    <input type="number" id="mdvp-jitter" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-jitter-abs">MDVP:Jitter(Abs)</label>
+                    <input type="number" id="mdvp-jitter-abs" step="0.000001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-rap">MDVP:RAP</label>
+                    <input type="number" id="mdvp-rap" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-ppq">MDVP:PPQ</label>
+                    <input type="number" id="mdvp-ppq" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="jitter-ddp">Jitter:DDP</label>
+                    <input type="number" id="jitter-ddp" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-shimmer">MDVP:Shimmer</label>
+                    <input type="number" id="mdvp-shimmer" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-shimmer-db">MDVP:Shimmer(dB)</label>
+                    <input type="number" id="mdvp-shimmer-db" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="shimmer-apq3">Shimmer:APQ3</label>
+                    <input type="number" id="shimmer-apq3" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="shimmer-apq5">Shimmer:APQ5</label>
+                    <input type="number" id="shimmer-apq5" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="mdvp-apq">MDVP:APQ</label>
+                    <input type="number" id="mdvp-apq" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="shimmer-dda">Shimmer:DDA</label>
+                    <input type="number" id="shimmer-dda" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="nhr">NHR</label>
+                    <input type="number" id="nhr" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="hnr">HNR</label>
+                    <input type="number" id="hnr" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="rpde">RPDE</label>
+                    <input type="number" id="rpde" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="dfa">DFA</label>
+                    <input type="number" id="dfa" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="spread1">spread1</label>
+                    <input type="number" id="spread1" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="spread2">spread2</label>
+                    <input type="number" id="spread2" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="d2">D2</label>
+                    <input type="number" id="d2" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="ppe">PPE</label>
+                    <input type="number" id="ppe" step="0.001" required>
+                </div>
+            </div>
+
+            <button id="check-parkinsons" class="check-btn">Parkinson's Test Result</button>
+            
+            <div id="parkinsons-result" class="result-container">
+                <!-- Result will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Lung Cancer Form -->
+        <div id="lung-form" class="model-form" style="display: none;">
+            <h1>Lung Cancer Prediction using ML</h1>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age-lung">Age</label>
+                    <input type="number" id="age-lung" required>
+                </div>
+                <div class="form-group">
+                    <label for="smoking-history">Smoking History (Years)</label>
+                    <input type="number" id="smoking-history" required>
+                </div>
+                <div class="form-group">
+                    <label for="cough-severity">Cough Severity</label>
+                    <select id="cough-severity" required>
+                        <option value="0">No Cough</option>
+                        <option value="1">Mild Cough</option>
+                        <option value="2">Chronic Cough</option>
+                        <option value="3">Severe with Blood</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="shortness-breath">Shortness of Breath</label>
+                    <select id="shortness-breath" required>
+                        <option value="0">None</option>
+                        <option value="1">Mild</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Severe</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="chest-pain">Chest Pain</label>
+                    <select id="chest-pain" required>
+                        <option value="0">None</option>
+                        <option value="1">Mild</option>
+                        <option value="2">Moderate</option>
+                        <option value="3">Severe</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="family-history">Family History</label>
+                    <select id="family-history" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <button id="check-lung" class="check-btn">Lung Cancer Test Result</button>
+            <div id="lung-result" class="result-container"></div>
+        </div>
+
+        <!-- Liver Disease Form -->
+        <div id="liver-form" class="model-form" style="display: none;">
+            <h1>Liver Disease Prediction using ML</h1>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age-liver">Age</label>
+                    <input type="number" id="age-liver" required>
+                </div>
+                <div class="form-group">
+                    <label for="alcohol">Alcohol Consumption (drinks/week)</label>
+                    <input type="number" id="alcohol" required>
+                </div>
+                <div class="form-group">
+                    <label for="bilirubin">Bilirubin Level (mg/dL)</label>
+                    <input type="number" id="bilirubin" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="albumin">Albumin Level (g/dL)</label>
+                    <input type="number" id="albumin" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="alp">Alkaline Phosphatase (ALP) Level (U/L)</label>
+                    <input type="number" id="alp" required>
+                </div>
+                <div class="form-group">
+                    <label for="ast">Aspartate Aminotransferase (AST) Level (U/L)</label>
+                    <input type="number" id="ast" required>
+                </div>
+            </div>
+            <button id="check-liver" class="check-btn">Liver Disease Test Result</button>
+            <div id="liver-result" class="result-container"></div>
+        </div>
+
+        <!-- Kidney Disease Form -->
+        <div id="kidney-form" class="model-form" style="display: none;">
+            <h1>Kidney Disease Prediction using ML</h1>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age-kidney">Age</label>
+                    <input type="number" id="age-kidney" required>
+                </div>
+                <div class="form-group">
+                    <label for="bun">Blood Urea Nitrogen (BUN) (mg/dL)</label>
+                    <input type="number" id="bun" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="creatinine">Creatinine Level (mg/dL)</label>
+                    <input type="number" id="creatinine" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="hemoglobin">Hemoglobin Level (g/dL)</label>
+                    <input type="number" id="hemoglobin" step="0.1" required>
+                </div>
+                <div class="form-group">
+                    <label for="blood-pressure">Blood Pressure (mmHg)</label>
+                    <input type="number" id="blood-pressure" required>
+                </div>
+                <div class="form-group">
+                    <label for="proteinuria">Proteinuria Level</label>
+                    <select id="proteinuria" required>
+                        <option value="0">None</option>
+                        <option value="1">Trace</option>
+                        <option value="2">1+ (30 mg/dL)</option>
+                        <option value="3">2+ (100 mg/dL)</option>
+                        <option value="4">3+ (300 mg/dL)</option>
+                        <option value="5">4+ (>500 mg/dL)</option>
+                    </select>
+                </div>
+            </div>
+            <button id="check-kidney" class="check-btn">Kidney Disease Test Result</button>
+            <div id="kidney-result" class="result-container"></div>
+        </div>
+
+        <!-- Thyroid Disease Form -->
+        <div id="thyroid-form" class="model-form" style="display: none;">
+            <h1>Thyroid Disease Prediction using ML</h1>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="tsh">TSH Level</label>
+                    <input type="number" id="tsh" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="t3">T3 Level</label>
+                    <input type="number" id="t3" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="t4">T4 Level</label>
+                    <input type="number" id="t4" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="thyroid-size">Thyroid Size</label>
+                    <select id="thyroid-size" required>
+                        <option value="0">Normal</option>
+                        <option value="1">Enlarged</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tumor">Tumor</label>
+                    <select id="tumor" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <button id="check-thyroid" class="check-btn">Thyroid Disease Test Result</button>
+            <div id="thyroid-result" class="result-container"></div>
+        </div>
+
+        <!-- Alzheimer's Disease Form -->
+        <div id="alzheimer-form" class="model-form" style="display: none;">
+            <h1>Alzheimer's Disease Prediction using ML</h1>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="age-alz">Age</label>
+                    <input type="number" id="age-alz" required>
+                </div>
+                <div class="form-group">
+                    <label for="mmse">MMSE Score</label>
+                    <input type="number" id="mmse" min="0" max="30" required>
+                </div>
+                <div class="form-group">
+                    <label for="cdr">CDR Score</label>
+                    <input type="number" id="cdr" step="0.5" min="0" max="3" required>
+                </div>
+                <div class="form-group">
+                    <label for="etiv">eTIV</label>
+                    <input type="number" id="etiv" required>
+                </div>
+                <div class="form-group">
+                    <label for="nwbv">nWBV</label>
+                    <input type="number" id="nwbv" step="0.001" required>
+                </div>
+                <div class="form-group">
+                    <label for="asf">ASF</label>
+                    <input type="number" id="asf" step="0.001" required>
+                </div>
+            </div>
+            <button id="check-alzheimer" class="check-btn">Alzheimer's Test Result</button>
+            <div id="alzheimer-result" class="result-container"></div>
+        </div>
+    </div>
+
+    <script src="script2.js"></script>
+</body>
+</html>
